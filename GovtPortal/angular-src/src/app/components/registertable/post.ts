@@ -1,0 +1,19 @@
+export interface Post {
+    candidateId:string;
+    title:string;
+    gender:string;
+    firstName:string;
+    lastName:string;
+    dob:string;
+    emailId:string;
+    phoneNumber:string;
+    uniqueIdType:string
+    uniqueIdNumber:string;
+    nationality:string;
+    address:string;
+    country:string;
+    city:string;
+    zip:string;
+    state:string;
+    verifyStatus:string;
+}

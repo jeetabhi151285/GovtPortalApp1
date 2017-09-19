@@ -1,0 +1,25 @@
+
+
+.accept {
+  border-color: green;
+  color: #fff;
+  box-shadow: 0 0 40px 40px green inset, 0 0 0 0 green;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+.accept:hover {
+  box-shadow: 0 0 5px 0 green inset, 0 0 10px 2px green;
+  color:green;
+}
+
+.reject {
+  border-color: #ff0000;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #ff0000 inset, 0 0 0 0 #ff0000;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+.reject:hover {
+  box-shadow: 0 0 10px 0 #ff0000 inset, 0 0 10px 4px #ff0000;
+  color:red;
+}

@@ -1,0 +1,273 @@
+
+     <!--     <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+                <thead>
+                <tr>
+                    <th style="width: 30px;"></th>
+                    <th style="width: 20%">
+                        <mfDefaultSorter by="name">Name</mfDefaultSorter>
+                    </th>
+                    <th style="width: 40%">
+                        <mfDefaultSorter by="email">Email</mfDefaultSorter>
+                    </th>
+                    <th style="width: 10%">
+                        <mfDefaultSorter by="age">Age</mfDefaultSorter>
+                    </th>
+                    <th style="width: 20%">
+                        <mfDefaultSorter [by]="sortByWordLength">City</mfDefaultSorter>
+                    </th>
+                </tr>
+               
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of mf.data">
+                
+                    <td>
+                        <button ng-if="item.expanded" ng-click="item.expanded = false">-</button>
+                         <button ng-if="!item.expanded" ng-click="item.expanded = true">+</button>
+                     </td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.age}}</td>
+                    <td>{{item.city | uppercase}}</td>
+                    <td>
+                        <button type="submit" class="btn accept">Accept</button>
+                    </td>
+                    <td>
+                        <button (click)="Reject(item)" class="btn reject">Reject</button>
+                    </td>
+                </tr>
+                 <tr ng-if="item.expanded" ng-repeat-end="">
+               
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="5">
+                        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
+                    </td>
+                </tr>
+                </tfoot>
+            </table> -->
+
+ <!-- <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5"> 
+    <thead>
+    <tr>
+        <th style="width: 10%">
+            <mfDefaultSorter by="lastName">Name</mfDefaultSorter>
+        </th>
+        <th style="width: 10%">
+            <mfDefaultSorter by="dob">DOB</mfDefaultSorter>
+        </th>
+        <th style="width: 10%">
+            <mfDefaultSorter by="email">Email</mfDefaultSorter>
+        </th>
+        <th style="width: 10%">
+            <mfDefaultSorter by="phoneno">Phone No</mfDefaultSorter>
+        </th>
+        <th style="width: 10%">
+            <mfDefaultSorter by="identification">Identification</mfDefaultSorter>
+        </th>
+        <th style="width: 10%">
+            <mfDefaultSorter by="nationality">Nationality</mfDefaultSorter>
+        </th>
+        <th style="width: 10%">
+            <mfDefaultSorter by="address">Address</mfDefaultSorter>
+        </th>
+        <th style="width: 10%">
+            <mfDefaultSorter by="country">Country</mfDefaultSorter>
+        </th>
+        <th style="width: 10%">
+            <mfDefaultSorter by="city">City</mfDefaultSorter>
+        </th>
+        <th style="width: 10%">
+            <mfDefaultSorter by="pincode">Pincode</mfDefaultSorter>
+        </th>
+        <th style="width: 10%">
+            <mfDefaultSorter by="state">State</mfDefaultSorter>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of mf.data">
+        <td>{{item.lastName}}</td>
+        <td>{{item.dob}}</td>
+        <td class="text-right">{{item.email}}</td>
+        <td>{{item.phoneno}}</td>
+        <td>{{item.identification}}</td>
+        <td>{{item.nationality}}</td>
+        <td>{{item.address}}</td>
+        <td>{{item.country | uppercase}}</td>
+        <td>{{item.city}}</td>
+        <td>{{item.pincode}}</td>
+        <td>{{item.state}}</td>
+        <td>
+            <button type="submit" class="btn accept">Accept</button>
+        </td>
+         <td>
+            <button (click)="Reject(item)" class="btn reject">Reject</button>
+         </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="4">
+            <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+        </td>
+    </tr>
+    </tfoot>
+</table> -->
+
+ <!-- [items]="films" -->
+<div style="margin: auto; max-width: 1400px; margin-top:50px">
+    <data-table id="films-grid"
+        headerTitle="Personal Details"
+        [items]="posts"
+        [itemCount]="filmCount"
+      (reload)="reloadDatatable($event)"
+
+        [limit]="8"
+        [sortBy]="'rating'"
+        [sortAsc]="false"
+
+        [selectColumn]="true"
+        [multiSelect]="false"
+        [substituteRows]="false"
+        [expandableRows]="true"
+        [translations]="translations"
+        [indexColumnHeader]="'#'"
+        [selectOnRowClick]="true"
+        [rowColors]="rowColors"
+        >
+      <!--  <template #dataTableExpand let-item="item">
+             <div [textContent]="item.description" style="padding: 5px; color: gray"></div>
+            <div [textContent]="item.title" style="padding: 5px; color: gray"></div>
+            <div [textContent]="item.firstName" style="padding: 5px; color: gray"></div>
+            <div [textContent]="item.lastName" style="padding: 5px; color: gray"></div>
+            <div [textContent]="item.dob" style="padding: 5px; color: gray"></div>
+            <div [textContent]="item.emailId" style="padding: 5px; color: gray"></div>
+            <div [textContent]="item.phoneNumber" style="padding: 5px; color: gray"></div>
+            <div [textContent]="item.uniqueIdType" style="padding: 5px; color: gray"></div>
+            <div [textContent]="item.uniqueIdNumber" style="padding: 5px; color: gray"></div>
+            <div [textContent]="item.nationality" style="padding: 5px; color: gray"></div>
+            <div [textContent]="item.address" style="padding: 5px; color: gray"></div>
+            <div [textContent]="item.country" style="padding: 5px; color: gray"></div>
+            <div [textContent]="item.city" style="padding: 5px; color: gray"></div>
+            <div [textContent]="item.zip" style="padding: 5px; color: gray"></div>
+            <div [textContent]="item.state" style="padding: 5px; color: gray"></div>
+
+        </template>  -->
+
+        <template #dataTableExpand let-item="item">
+           <div [textContent]="item.candidateId"></div> 
+            <div [textContent]="item.description"></div>
+            <div [textContent]="item.title"></div>
+            <div [textContent]="item.firstName"></div>
+            <div [textContent]="item.lastName"></div>
+            <div [textContent]="item.dob"></div>
+            <div [textContent]="item.emailId"></div>
+            <div [textContent]="item.phoneNumber"></div>
+            <div [textContent]="item.uniqueIdType"></div>
+            <div [textContent]="item.uniqueIdNumber"></div>
+            <div [textContent]="item.nationality"></div>
+            <div [textContent]="item.address"></div>
+            <div [textContent]="item.country"></div>
+            <div [textContent]="item.city"></div>
+            <div [textContent]="item.zip"></div>
+            <div [textContent]="item.state"></div>
+             
+        </template>
+      <!--  <data-table-column
+            [property]="'title'"
+            [header]="'Title'">
+        </data-table-column> 
+        <data-table-column
+            [property]="'gender'"
+            [header]="'Gender'">
+        </data-table-column> -->
+        <data-table-column
+            [property]="'firstName'"
+            [header]="'First Name'"
+            [cellColors]="cellColor">
+        </data-table-column>
+        <data-table-column
+            [property]="'lastName'"
+            [header]="'Last Name'">
+        </data-table-column>
+        <data-table-column
+            [property]="'dob'"
+            [header]="'DOB'">
+        </data-table-column>
+        <data-table-column
+            [property]="'emailId'"
+            [header]="'Email'">
+        </data-table-column>
+        <data-table-column
+            [property]="'phoneNumber'"
+            [header]="'Phone No'"
+            [cellColors]="cellColor">
+        </data-table-column>
+        <data-table-column
+            [property]="'uniqueIdType'"
+            [header]="'Identification Proof'">
+        </data-table-column>
+        <data-table-column
+            [property]="'uniqueIdNumber'"
+            [header]="'Identification Proof'">
+        </data-table-column>
+        <data-table-column
+            [property]="'nationality'"
+            [header]="'Nationality'">
+        </data-table-column>
+     <!--   <data-table-column
+            [property]="'address'"
+            [header]="'Address'">
+        </data-table-column>
+        <data-table-column
+            [property]="'country'"
+            [header]="'Country'"
+            [cellColors]="cellColor">
+        </data-table-column>
+        <data-table-column
+            [property]="'city'"
+            [header]="'City'">
+        </data-table-column>
+        <data-table-column
+            [property]="'zip'"
+            [header]="'Pincode'">
+        </data-table-column>
+        <data-table-column
+            [property]="'state'"
+            [header]="'State'">
+        </data-table-column> 
+        <data-table-column
+           
+            [header]="'Status'">
+            <template #dataTableCell let-item="item">
+              <span *ngIf="item.verifyStatus" class="form-control input-sm">{{item.verifyStatus}}</span>
+           </template>
+        </data-table-column> -->
+        <data-table-column>
+             <template #dataTableCell let-item="item">
+                <button (click)="accept(item)" [disabled]=!item.verifyStatus class="glyphicon glyphicon-ok btn accept"></button>
+            </template>
+        </data-table-column>
+        <data-table-column>
+             <template #dataTableCell let-item="item">
+                <button (click)="reject(item)" class="glyphicon glyphicon-remove btn reject"></button>
+            </template>
+        </data-table-column>
+    </data-table>
+    <div style="margin-top: 10px">
+        <b>Selected:</b>
+        <span *ngIf="filmsTable.selectedRow == null"><i>No item selected</i></span>
+        <span [textContent]="filmsTable.selectedRow && filmsTable.selectedRow.item.candidateId"></span>
+    </div>
+</div>
+
+
+
+
+    
+
+
+       

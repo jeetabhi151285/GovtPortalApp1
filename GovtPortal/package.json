@@ -1,0 +1,30 @@
+{
+  "name": "govtportalapp3",
+  "version": "1.0.0",
+  "description": "Govt ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "author": "Abhijit Ghosh",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "jsonwebtoken": "^7.4.1",
+    "mongojs": "^2.4.0",
+    "mongoose": "^4.11.1",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.2.1",
+    "request": "^2.81.0",
+    "shortid": "^2.2.8",
+    "uniqid": "^4.1.1"
+  }
+}
